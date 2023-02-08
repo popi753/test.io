@@ -1,7 +1,7 @@
-// if (process.env.NODE_ENV !== "production") {
-//    require("dotenv").parse
+if (process.env.NODE_ENV !== "production") {
+   require("dotenv").config()
   
-// }
+}
 
 var createError = require('http-errors');
 var express = require('express');
@@ -13,7 +13,7 @@ var mongoose = require("mongoose")
 
 mongoose.set('strictQuery', true)
 
-mongoose.connect("mongodb+srv://popi:Py4kaRtE7BrlyddK@cluster0.poh4xzk.mongodb.net/?retryWrites=true&w=majority", 
+mongoose.connect(process.env.database, 
     ()=>{
       console.log("connected")
     },
