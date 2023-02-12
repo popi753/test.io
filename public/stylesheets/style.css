@@ -1,8 +1,113 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+html, body, div, span, applet, object, iframe,
+/* h1, h2, h3, h4, h5, h6,  */
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-a {
-  color: #00B7FF;
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* 1366X625 */
+
+/* mine */
+#auth{
+  display: flex;
+  justify-content: center;
+}
+
+#registerbox{
+  margin-top: -100px;
+  width: 250px;
+  height: 350px;
+  border: 2px solid black;
+  box-shadow: 0 0 30px black;
+  background: transparent;
+  backdrop-filter: blur(20px);
+}
+
+#registerbox form{
+  height: 100%;
+}
+
+#register{
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+
+#register h1{
+  margin: 0px;
+}
+
+#register button{
+  margin-bottom: 30px;
+  width: 70px;
+  height: 25px;
+  font-size: 0.825em;
+  cursor: pointer;
+}
+
+.registerboxes input {   
+  height: 30px;
+  width: 200px;
+  border: 1px solid white;
+  background: transparent;
+  outline: none;
+  font-size: 1em;
+  border-radius: 15px;
+  padding-left: 20px;
+  color: white;
+}
+
+.registerboxes input::placeholder{
+  color: white;
+}
+
+.registerboxes #Rpassword{
+  color: white;
 }

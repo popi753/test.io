@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <style>
+
+body { 
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url("./images/karl-paul-baldacchino-CSZ1Xk0KizQ-unsplash.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  
+  }
+
+    </style>
+</head>
+<body>
+    <div id="registerbox">
+        <form action="/profile" method="post">
+            <div id="register">
+                <h1>Registration</h1>
+
+                <div class="registerboxes">
+                    <input type="text" id="Rusername" name="Rusername" placeholder="enter username" required>
+                    <label for="Rusername" id="Rsuernamelabel"></label>
+                </div>
+
+                <div class="registerboxes">
+                    <input type="password" id="Rpassword" name="Rpassword" placeholder="enter password" required>
+                    <label for="Rpassword" id="Rpasswordlabel"></label>
+                </div>
+
+                <button type="submit" id="registerbtn">register</button>
+
+            </div>
+            
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+const Pinput = document.getElementById("Rpassword")
+
+Pinput.addEventListener("input", ()=>{
+    Pinput.type = "text"
+})
+
+Pinput.addEventListener("focusin", ()=>{
+    Pinput.type = "text"
+})
+
+Pinput.addEventListener("focusout", ()=>{
+    Pinput.type = "password"
+})
+
+
+Pinput.addEventListener("mouseover", ()=>{
+    Pinput.type = "text"
+})
+
+Pinput.addEventListener("mouseout", ()=>{
+    Pinput.type = "password"
+})
+
+
+</script>
+
+    
+</body>
+</html>
