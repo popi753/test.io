@@ -111,3 +111,24 @@ table {
 .registerboxes #Rpassword{
   color: white;
 }
+
+.Rlabel{
+  font-size: 20px;
+
+  height: 1px;
+  display: block;
+}
+
+#registersvg{
+  width: 30px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 23px;
+  left: 3px;
+}
+
+#Rlogin{   
+  position: absolute;
+  top: 88%;
+  color: gray;}
+

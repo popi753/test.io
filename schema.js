@@ -18,3 +18,4 @@ const userSchema = new mongoose.Schema({
 const mycolect = mongoose.model("mycolect", userSchema)
 
 module.exports = mycolect
+
