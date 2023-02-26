@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require("mongoose")
 var User = require("./schema")
-
+var session = require("express-session")
 
 
 mongoose.set('strictQuery', true)
@@ -49,6 +49,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: "auth",
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use('/', indexRouter);
 

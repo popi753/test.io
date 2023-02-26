@@ -49,10 +49,25 @@ table {
 /* 1366X625 */
 
 /* mine */
+body { 
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
 #auth{
   display: flex;
   justify-content: center;
 }
+
+
+/*register*/
+
 
 #registerbox{
   margin-top: -100px;
@@ -130,5 +145,85 @@ table {
 #Rlogin{   
   position: absolute;
   top: 88%;
-  color: gray;}
+  color: gray;
+}
 
+/*login*/
+
+#loginbox{
+  margin-top: -100px;
+  width: 250px;
+  height: 350px;
+  border: 2px solid black;
+  box-shadow: 0 0 30px black;
+  background: transparent;
+  backdrop-filter: blur(20px);
+}
+
+#loginbox form{
+  height: 100%;
+}
+
+#login{
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+
+#login h1{
+  margin: 0px;
+}
+
+#login button{
+  margin-bottom: 30px;
+  width: 70px;
+  height: 25px;
+  font-size: 0.825em;
+  cursor: pointer;
+}
+
+.loginboxes input {   
+  height: 30px;
+  width: 200px;
+  border: 1px solid white;
+  background: transparent;
+  outline: none;
+  font-size: 1em;
+  border-radius: 15px;
+  padding-left: 20px;
+  color: white;
+}
+
+.loginboxes input::placeholder{
+  color: white;
+}
+
+.loginboxes #Rpassword{
+  color: white;
+}
+
+.Llabel{
+  font-size: 20px;
+  height: 1px;
+  display: block;
+}
+
+#loginsvg{
+  width: 30px;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 23px;
+  left: 3px;
+}
+
+#Lregister{   
+  position: absolute;
+  top: 88%;
+  color: gray;
+}

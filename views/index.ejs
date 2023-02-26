@@ -9,10 +9,24 @@
   <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 <body>
+ 
+
+
+      <div>
+
+        <% if(locals.msg){ %>
+          <p><%=msg%></p>
+          <script>alert(" <%=msg%>" )</script>
+        <% }  %>
+      </div>
+
   
       <div id="auth">
         <a href="/login"   >
           <button>login</button>
+        </a>
+        <a href="/profile">
+          <button>profile</button>
         </a>
         <a href="/register" >
           <button>register</button>

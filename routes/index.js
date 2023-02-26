@@ -4,18 +4,39 @@ var mongoose = require("mongoose");
 var User = require("../schema")
 
 
-router.get('/', function(req, res) {
-  res.render('index',);
+
+function validate(req,res,next) {
+  if (req.session.user) {
+            req.session.msg = "already authorized"
+    return  res.redirect("/")
+  }else{
+    return next()
+  }
+}
+
+function restrict(req,res,next) {
+  if (!(req.session.user)) {
+            req.session.msg = "u need to authorize"
+    return  res.redirect("/")
+  }else{
+    return next()
+  }
+}
+
+
+
+router.get('/',  function(req, res) {
+  if (req.session.user) {
+    req.session.msg = "already authorized"
+  }
+  res.render('index', {user:req.session.user, msg: req.session.msg});
 });
 
 
-router.get("/login", (req, res)=>{
 
-    res.render("login")
 
-})
 
-router.get("/register", (req, res)=>{
+router.get("/register", validate, (req, res)=>{
   res.render("register")
 })
 
@@ -47,7 +68,7 @@ router.post("/register", async (req, res)=>{
     
     else {
       console.log("nigga saved")
-      // res.render("profile", {name : saveduser.username})
+      req.session.user = user
       res.redirect("/profile")
       
     }
@@ -57,8 +78,43 @@ router.post("/register", async (req, res)=>{
 })
 
 
-router.get("/profile", (req,res)=>{
-  res.render("profile")
+
+
+router.get("/login", validate, (req, res)=>{
+  res.render("login")
+})
+
+router.post("/login", async (req,res)=>{
+
+
+User.findOne({username: req.body.Lusername}, (err, data)=>{
+  if (err) {
+    res.send(err)
+  }
+  else if (data) {
+          if(data.password == req.body.Lpassword){
+            req.session.user = data
+            res.redirect("/profile")
+          }else{
+            res.render("login", {someerr : "2"})
+          } 
+  }  else{
+    res.render("login", {someerr : "1"})
+  }
+})
+
+
+})
+
+
+router.get("/profile", restrict, (req,res)=>{
+  res.render("profile", {user : req.session.user})
+})
+
+router.post("/logout", (req,res)=>{
+  req.session.user = false
+  req.session.msg = false
+  res.redirect("/")
 })
 
 
